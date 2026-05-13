@@ -1,0 +1,27 @@
+class Account:
+    def __init__(self, user , balance =0):
+        self.user= user
+        self.__balance = balance
+
+    def deposit(self,amount):
+        print(f" This user deposited ${amount} .")
+        if amount > 0:
+            self.__balance += amount
+            print(f"Dear user, your deposit of ${amount} was successful. Your new balance is${self.__balance}")
+        else:
+            print(f" Deposit should  be greater than zero.")
+
+    def withdraw(self,amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+            print(f"Dear user, you withdraw ${amount} . Remaining balance is ${self.__balance})")
+        else:
+            print("Funds too low to commence operation.")
+
+    def get_balance(self):
+       return self.__balance
+
+    def set_balance(self,deduction):
+        self.__balance -= deduction
+        return self.__balance
+
